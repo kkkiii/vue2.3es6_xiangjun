@@ -7,27 +7,29 @@
 </head>
 <body>
 <div id="hdcms">
-    <router-link to="/hdphp">HDPHP</router-link>
-    <router-link to="/hdcms">HDCMS</router-link>
+<router-link to="/hdphp">hdphp</router-link>
+<router-link to="/hdcms">hdcms</router-link>
     <router-view></router-view>
+
 </div>
 <script>
     const hdphp={
-        template:'<h1>hdphp</h1>'
-    }
+        template:'<h3>这是hdphp路由显示的部件1</h3>'
+    };
+
     const hdcms={
-        template:'<h1>hdcms</h1>'
-    }
-    let routes=[
-        {path:'/hdphp',component:hdphp},
-        {path:'/hdcms',component:hdcms},
-    ];
-    //要把组件交给路由器
-    let router = new VueRouter({routes});
+        template:'<h3>这是hdcms路由显示的部件2</h3>'
+    };
+
+    let router = new VueRouter({
+        routes:[
+            {path:'/hdphp',component:hdphp},
+            {path:'/hdcms',component:hdcms}
+        ]
+    });
+
     new Vue({
         el: '#hdcms',
-        router
+        router:router
     });
 </script>
-</body>
-</html>
